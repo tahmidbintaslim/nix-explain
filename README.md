@@ -29,11 +29,11 @@ Fix:
 ## Install
 
 ```bash
-nix run github:tahmidbintaslimrafi/nix-explain -- nix build
+nix run github:tahmidbintaslim/nix-explain -- nix build
 ```
 
 ```bash
-nix profile install github:tahmidbintaslimrafi/nix-explain
+nix profile install github:tahmidbintaslim/nix-explain
 ```
 
 Or build it from source with `cargo install --path .`.
@@ -97,4 +97,4 @@ user frame for each one. To add a rule, add an entry in `src/rules.rs`, then add
 
 ## License
 
-MIT © tahmidbintaslimrafi
+MIT © tahmidbintaslim

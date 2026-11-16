@@ -17,7 +17,7 @@
             cargoLock.lockFile = ./Cargo.lock;
             meta = {
               description = "Plain-English explanations and fixes for Nix error traces";
-              homepage = "https://github.com/tahmidbintaslimrafi/nix-explain";
+              homepage = "https://github.com/tahmidbintaslim/nix-explain";
               license = pkgs.lib.licenses.mit;
               mainProgram = "nix-explain";
             };
