@@ -1,0 +1,11 @@
+error: builder for '/nix/store/ab12cd34ef56gh78ij90kl12mn34op56-myapp-0.1.0.drv' failed with exit code 101;
+       last 12 log lines:
+       > error: failed to run custom build command for `openssl-sys v0.9.103`
+       >
+       > --- stderr
+       > thread 'main' panicked at /build/myapp-0.1.0-vendor/openssl-sys-0.9.103/build/find_normal.rs:190:5:
+       >
+       > Could not find directory of OpenSSL installation, and this `-sys` crate cannot
+       > proceed without this knowledge. If OpenSSL is installed and this crate had
+       > trouble finding it,  you can set the `OPENSSL_DIR` environment variable for the
+       For full logs, run 'nix log /nix/store/ab12cd34ef56gh78ij90kl12mn34op56-myapp-0.1.0.drv'.

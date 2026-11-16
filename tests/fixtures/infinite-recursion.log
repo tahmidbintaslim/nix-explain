@@ -1,0 +1,15 @@
+warning: Git tree '/home/me/proj' is dirty
+error:
+       … while evaluating the attribute 'loop'
+         at /home/me/proj/config.nix:4:23:
+            3|   loop = loop + 1;
+            4| in { inherit settings loop; }
+             |                       ^
+            5|
+
+       error: infinite recursion encountered
+       at /home/me/proj/config.nix:3:10:
+            2|   settings = { color = "red"; size = 3; };
+            3|   loop = loop + 1;
+             |          ^
+            4| in { inherit settings loop; }

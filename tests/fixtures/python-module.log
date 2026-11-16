@@ -1,0 +1,10 @@
+error: builder for '/nix/store/qq11ww22ee33rr44tt55yy66uu77ii88-python3.12-mylib-0.3.0.drv' failed with exit code 1;
+       last 8 log lines:
+       > Running phase: pythonImportsCheckPhase
+       > Executing pythonImportsCheckPhase
+       > Check whether the following modules can be imported: mylib
+       > Traceback (most recent call last):
+       >   File "/build/source/mylib/__init__.py", line 2, in <module>
+       >     import yaml
+       > ModuleNotFoundError: No module named 'yaml'
+       For full logs, run 'nix log /nix/store/qq11ww22ee33rr44tt55yy66uu77ii88-python3.12-mylib-0.3.0.drv'.

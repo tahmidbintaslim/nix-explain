@@ -1,0 +1,19 @@
+[package]
+name = "nix-explain"
+version = "0.1.0"
+edition = "2021"
+description = "Turns noisy Nix error traces into a plain-English cause and a copy-pasteable fix"
+license = "MIT"
+authors = ["tahmidbintaslimrafi"]
+repository = "https://github.com/tahmidbintaslimrafi/nix-explain"
+readme = "README.md"
+keywords = ["nix", "nixos", "cli", "errors"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+regex = "1"
+serde_json = "1"
+
+[profile.release]
+lto = true
+strip = true

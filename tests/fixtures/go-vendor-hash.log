@@ -1,0 +1,4 @@
+error: hash mismatch in fixed-output derivation '/nix/store/9fj2k3l4m5n6p7q8r9s0t1u2v3w4x5y6-mytool-1.2.0-go-modules.drv':
+         specified: sha256-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=
+            got:    sha256-Xw2Q9f0bR7pL3nV6hY1tK8mE4sD5cA2uJ7gZ0oI9qWe=
+error: 1 dependencies of derivation '/nix/store/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p-mytool-1.2.0.drv' failed to build

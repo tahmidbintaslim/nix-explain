@@ -1,0 +1,5 @@
+error: builder for '/nix/store/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p-mytool-1.2.0-go-modules.drv' failed with exit code 1;
+       last 3 log lines:
+       > Running phase: buildPhase
+       > go: go.mod requires go >= 1.24.1 (running go 1.23.6; GOTOOLCHAIN=local)
+       For full logs, run 'nix log /nix/store/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p-mytool-1.2.0-go-modules.drv'.

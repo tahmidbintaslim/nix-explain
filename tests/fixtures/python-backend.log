@@ -1,0 +1,6 @@
+error: builder for '/nix/store/qq11ww22ee33rr44tt55yy66uu77ii88-python3.12-mylib-0.3.0.drv' failed with exit code 1;
+       last 4 log lines:
+       > Running phase: buildPhase
+       > Executing pypaBuildPhase
+       > * Getting build dependencies for wheel...
+       > ERROR Backend 'hatchling.build' is not available.

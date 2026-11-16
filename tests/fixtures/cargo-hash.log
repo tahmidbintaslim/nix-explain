@@ -1,0 +1,4 @@
+error: hash mismatch in fixed-output derivation '/nix/store/7hk1y4b2gq9sd0f1l2m3n4p5q6r7s8t9-myapp-0.1.0-vendor.drv':
+         specified: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+            got:    sha256-3mH2kV0nqfY1bQyN9u7pZ2sR8xW5tE4cL6aJ1dG0hKo=
+error: 1 dependencies of derivation '/nix/store/ab12cd34ef56gh78ij90kl12mn34op56-myapp-0.1.0.drv' failed to build

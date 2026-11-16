@@ -1,0 +1,9 @@
+building the system configuration...
+error:
+       … while calling the 'import' builtin
+         at /nix/store/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6-source/lib/modules.nix:404:28:
+          403|         else if isPath m || isString m then
+          404|           let file = m; in { _file = file; key = toString file; } // (import m)
+             |                            ^
+
+       error: path '/nix/store/z9x8c7v6b5n4m3l2k1j0h9g8f7d6s5a4-source/hosts/laptop/hardware.nix' does not exist

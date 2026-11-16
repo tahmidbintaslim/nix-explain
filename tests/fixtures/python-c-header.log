@@ -1,0 +1,6 @@
+error: builder for '/nix/store/qq11ww22ee33rr44tt55yy66uu77ii88-python3.12-fastext-1.0.drv' failed with exit code 1;
+       last 4 log lines:
+       > building 'fastext._speedups' extension
+       > gcc -fno-strict-overflow -Wsign-compare -O3 -Wall -fPIC -c src/speedups.c -o build/speedups.o
+       > src/speedups.c:3:10: fatal error: zlib.h: No such file or directory
+       > compilation terminated.

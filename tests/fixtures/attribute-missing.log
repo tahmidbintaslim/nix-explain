@@ -1,0 +1,15 @@
+error:
+       … while evaluating the attribute 'settings.colour'
+         at /home/me/proj/config.nix:4:14:
+            3|   loop = loop + 1;
+            4| in { inherit settings loop; }
+             |              ^
+            5|
+
+       error: attribute 'colour' missing
+       at /home/me/proj/flake.nix:7:12:
+            6|     rec1 = cfg.loop;
+            7|     miss = cfg.settings.colour;
+             |            ^
+            8|     untracked = mod;
+       Did you mean color?

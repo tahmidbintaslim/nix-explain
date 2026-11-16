@@ -1,0 +1,19 @@
+error:
+       … while evaluating the attribute 'drvPath'
+         at /nix/store/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6-source/lib/customisation.nix:418:7:
+          417|     // {
+          418|       drvPath =
+             |       ^
+
+       … while calling the 'derivationStrict' builtin
+         at «nix-internal»/derivation-internal.nix:37:12:
+           36|
+           37|   strict = derivationStrict drvAttrs;
+             |            ^
+
+       error: Package ‘vscode-1.95.3’ in /nix/store/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6-source/pkgs/applications/editors/vscode/vscode.nix:85 has an unfree license (‘unfree’), refusing to evaluate.
+
+       a) To temporarily allow unfree packages, you can use an environment variable
+          for a single invocation of the nix tools.
+
+            $ export NIXPKGS_ALLOW_UNFREE=1

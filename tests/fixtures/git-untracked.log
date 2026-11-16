@@ -1,0 +1,13 @@
+error:
+       … while calling the 'import' builtin
+         at /home/me/proj/flake.nix:4:11:
+            3|     cfg = import ./config.nix;
+            4|     mod = import ./module.nix;
+             |           ^
+            5|   in {
+
+       error: Path 'module.nix' in the repository "/home/me/proj" is not tracked by Git.
+
+       To make it visible to Nix, run:
+
+       git -C "/home/me/proj" add "module.nix"
