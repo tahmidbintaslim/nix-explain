@@ -1,10 +1,80 @@
-error: builder for '/nix/store/qq11ww22ee33rr44tt55yy66uu77ii88-python3.12-mylib-0.3.0.drv' failed with exit code 1;
-       last 8 log lines:
+warning: Git tree '/home/me/proj' is dirty
+this derivation will be built:
+  /nix/store/agb3nyjj9qd3d6hnsi2z1rjnf4vpb80v-python3.14-mylib-0.3.0.drv
+these 21 paths will be fetched (2.9 MiB download, 14.8 MiB unpacked):
+  /nix/store/60v78zqbg5k8sbq1x50w9s1rq5ws00da-die-hook
+  /nix/store/njr5hcl5c4ksg8hmgdw9l6w9rqx8f486-ensure-newer-sources-hook
+  /nix/store/nk3i4cy2djv00bkpdb3csq49ph2xzlsa-make-shell-wrapper-hook
+  /nix/store/4hq1ymn445y90kky3s3ipqcf0p5kcm30-pypa-build-hook.sh
+  /nix/store/8lj1lmxybq9a1cswfyl66i1lnw8ds93d-pypa-install-hook
+  /nix/store/2i27xr8mkmr0vgx1lh603mi28blqlzh7-python-catch-conflicts-hook
+  /nix/store/j6ycim1sd3l8jiay9i4z1bkyfqnw08ly-python-imports-check-hook.sh
+  /nix/store/v6inpj7cscyivlhmvgah93wznjp4yjz2-python-metadata-check-hook.sh
+  /nix/store/9cdgpi6bx00d62cr1aymnkdx5nhn65rw-python-namespaces-hook.sh
+  /nix/store/58hc4q7ls3wbmnf1bczhcd2cgyywchr9-python-output-dist-hook
+  /nix/store/daiq2cczqc9g39k4p6c3lia5qcxb9l12-python-remove-bin-bytecode-hook
+  /nix/store/8gyiyjr3r3ikmzlrai0ylxpipgwkq7ja-python-remove-tests-dir-hook
+  /nix/store/qj0dwd80cihvily72nmzjwr6xb6srj0s-python-runtime-deps-check-hook.sh
+  /nix/store/i497f4wmb285h5wgsx9f8h99q62a1761-python3-3.14.10-env
+  /nix/store/bm1njhf14r482imn26r44hn1a7wrsjhj-python3.14-build-1.5.1
+  /nix/store/68zv97r4v75zb2220rmpzbazmyg0f8xr-python3.14-installer-1.0.1
+  /nix/store/6q8ri9gmzglxvqrjrr04iczi05q2c4vf-python3.14-packaging-26.3
+  /nix/store/p02mrznxq1m7blfgvpv68qg82byml80z-python3.14-pyproject-hooks-1.2.0
+  /nix/store/rgglg6rpwjiirfgrkjg01jx2cgr2p7sc-python3.14-setuptools-83.0.0
+  /nix/store/y609rmnn0jmwpbgd1mw6fi3r1qd3wxwd-python3.14-wheel-0.47.0
+  /nix/store/3ac6fr9rqgzh7n632ifdalhmsa1l13w5-wrap-python-hook
+copying path '/nix/store/58hc4q7ls3wbmnf1bczhcd2cgyywchr9-python-output-dist-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/8gyiyjr3r3ikmzlrai0ylxpipgwkq7ja-python-remove-tests-dir-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/daiq2cczqc9g39k4p6c3lia5qcxb9l12-python-remove-bin-bytecode-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/60v78zqbg5k8sbq1x50w9s1rq5ws00da-die-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/njr5hcl5c4ksg8hmgdw9l6w9rqx8f486-ensure-newer-sources-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/2i27xr8mkmr0vgx1lh603mi28blqlzh7-python-catch-conflicts-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/9cdgpi6bx00d62cr1aymnkdx5nhn65rw-python-namespaces-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/j6ycim1sd3l8jiay9i4z1bkyfqnw08ly-python-imports-check-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/68zv97r4v75zb2220rmpzbazmyg0f8xr-python3.14-installer-1.0.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/rgglg6rpwjiirfgrkjg01jx2cgr2p7sc-python3.14-setuptools-83.0.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/6q8ri9gmzglxvqrjrr04iczi05q2c4vf-python3.14-packaging-26.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/y609rmnn0jmwpbgd1mw6fi3r1qd3wxwd-python3.14-wheel-0.47.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/p02mrznxq1m7blfgvpv68qg82byml80z-python3.14-pyproject-hooks-1.2.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/nk3i4cy2djv00bkpdb3csq49ph2xzlsa-make-shell-wrapper-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/3ac6fr9rqgzh7n632ifdalhmsa1l13w5-wrap-python-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/8lj1lmxybq9a1cswfyl66i1lnw8ds93d-pypa-install-hook' from 'https://cache.nixos.org'...
+copying path '/nix/store/qj0dwd80cihvily72nmzjwr6xb6srj0s-python-runtime-deps-check-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/bm1njhf14r482imn26r44hn1a7wrsjhj-python3.14-build-1.5.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/i497f4wmb285h5wgsx9f8h99q62a1761-python3-3.14.10-env' from 'https://cache.nixos.org'...
+copying path '/nix/store/4hq1ymn445y90kky3s3ipqcf0p5kcm30-pypa-build-hook.sh' from 'https://cache.nixos.org'...
+copying path '/nix/store/v6inpj7cscyivlhmvgah93wznjp4yjz2-python-metadata-check-hook.sh' from 'https://cache.nixos.org'...
+building '/nix/store/agb3nyjj9qd3d6hnsi2z1rjnf4vpb80v-python3.14-mylib-0.3.0.drv'...
+error: Cannot build '/nix/store/agb3nyjj9qd3d6hnsi2z1rjnf4vpb80v-python3.14-mylib-0.3.0.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/57bpyha51q3q0i0730w6xk6n17d30inp-python3.14-mylib-0.3.0
+         /nix/store/641sg0s1y181zamf2y5pd4la0xrlijyr-python3.14-mylib-0.3.0-dist
+       Last 25 log lines:
+       > no Makefile or custom installCheckPhase, doing nothing
+       > Running phase: pythonCatchConflictsPhase
+       > Running phase: pythonRemoveBinBytecodePhase
        > Running phase: pythonImportsCheckPhase
        > Executing pythonImportsCheckPhase
        > Check whether the following modules can be imported: mylib
        > Traceback (most recent call last):
-       >   File "/build/source/mylib/__init__.py", line 2, in <module>
+       >   File "<string>", line 1, in <module>
+       >     import sys; import importlib; list(map(lambda mod: importlib.import_module(mod), sys.argv[1:]))
+       >                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       >   File "<string>", line 1, in <lambda>
+       >     import sys; import importlib; list(map(lambda mod: importlib.import_module(mod), sys.argv[1:]))
+       >                                                        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+       >   File "/nix/store/bya4ansy58az5133kryqp2cvrxbnz8qy-python3-3.14.10/lib/python3.14/importlib/__init__.py", line 88, in import_module
+       >     return _bootstrap._gcd_import(name[level:], package, level)
+       >            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       >   File "<frozen importlib._bootstrap>", line 1406, in _gcd_import
+       >   File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+       >   File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+       >   File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+       >   File "<frozen importlib._bootstrap_external>", line 763, in exec_module
+       >   File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+       >   File "/nix/store/57bpyha51q3q0i0730w6xk6n17d30inp-python3.14-mylib-0.3.0/lib/python3.14/site-packages/mylib/__init__.py", line 1, in <module>
        >     import yaml
        > ModuleNotFoundError: No module named 'yaml'
-       For full logs, run 'nix log /nix/store/qq11ww22ee33rr44tt55yy66uu77ii88-python3.12-mylib-0.3.0.drv'.
+       For full logs, run:
+         nix log /nix/store/agb3nyjj9qd3d6hnsi2z1rjnf4vpb80v-python3.14-mylib-0.3.0.drv

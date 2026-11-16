@@ -1,11 +1,57 @@
-error: builder for '/nix/store/ab12cd34ef56gh78ij90kl12mn34op56-myapp-0.1.0.drv' failed with exit code 101;
-       last 12 log lines:
-       > error: failed to run custom build command for `openssl-sys v0.9.103`
+warning: Git tree '/home/me/proj' is dirty
+these 6 derivations will be built:
+  /nix/store/rbjn0g3dlffz0g8w48pbj174mibxk3z0-crate-cc-1.11.1.tar.gz.drv
+  /nix/store/7p5hjdbrafmyl9g89gla594c8mjmfj0q-cc-1.11.1.drv
+  /nix/store/li46fh4pm0l7dg3g90mska4j0dqzcn07-crate-openssl-sys-0.9.118.tar.gz.drv
+  /nix/store/s23pyh4d06wdkjw75qlh0c11dxmj2hag-openssl-sys-0.9.118.drv
+  /nix/store/ilbndw116pscrfabn2brlnizp743aq4f-cargo-vendor-dir.drv
+  /nix/store/3yzy1h5girfpym9m9af09cm7c0ljfb78-sslapp-0.1.0.drv
+these 5 paths will be fetched (893.0 KiB download, 7.3 MiB unpacked):
+  /nix/store/gfpxpcl65w6mrvlbr91afj24fgjzrrz8-find-msvc-tools-0.1.15
+  /nix/store/bfhkqhp2hv7d5mc9r8a7rl0dfb22h9ld-libc-0.2.191
+  /nix/store/i7pikvvxf28ba8gmhv5xhgfwhns7v123-pkg-config-0.3.34
+  /nix/store/5lxlv8b7cx56fd2k0bhf7dyky2xkyiym-shlex-2.0.1
+  /nix/store/l80ar46jrdprnfxg5p4zcw3vbxwshjqn-vcpkg-0.2.15
+copying path '/nix/store/gfpxpcl65w6mrvlbr91afj24fgjzrrz8-find-msvc-tools-0.1.15' from 'https://cache.nixos.org'...
+copying path '/nix/store/5lxlv8b7cx56fd2k0bhf7dyky2xkyiym-shlex-2.0.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/i7pikvvxf28ba8gmhv5xhgfwhns7v123-pkg-config-0.3.34' from 'https://cache.nixos.org'...
+copying path '/nix/store/bfhkqhp2hv7d5mc9r8a7rl0dfb22h9ld-libc-0.2.191' from 'https://cache.nixos.org'...
+copying path '/nix/store/l80ar46jrdprnfxg5p4zcw3vbxwshjqn-vcpkg-0.2.15' from 'https://cache.nixos.org'...
+building '/nix/store/rbjn0g3dlffz0g8w48pbj174mibxk3z0-crate-cc-1.11.1.tar.gz.drv'...
+building '/nix/store/li46fh4pm0l7dg3g90mska4j0dqzcn07-crate-openssl-sys-0.9.118.tar.gz.drv'...
+building '/nix/store/7p5hjdbrafmyl9g89gla594c8mjmfj0q-cc-1.11.1.drv'...
+building '/nix/store/s23pyh4d06wdkjw75qlh0c11dxmj2hag-openssl-sys-0.9.118.drv'...
+building '/nix/store/ilbndw116pscrfabn2brlnizp743aq4f-cargo-vendor-dir.drv'...
+building '/nix/store/3yzy1h5girfpym9m9af09cm7c0ljfb78-sslapp-0.1.0.drv'...
+error: Cannot build '/nix/store/3yzy1h5girfpym9m9af09cm7c0ljfb78-sslapp-0.1.0.drv'.
+       Reason: builder failed with exit code 101.
+       Output paths:
+         /nix/store/3rbsw32kq0w5pnlzy5g6s88s1i6b5gq2-sslapp-0.1.0
+       Last 25 log lines:
        >
-       > --- stderr
-       > thread 'main' panicked at /build/myapp-0.1.0-vendor/openssl-sys-0.9.103/build/find_normal.rs:190:5:
        >
-       > Could not find directory of OpenSSL installation, and this `-sys` crate cannot
-       > proceed without this knowledge. If OpenSSL is installed and this crate had
-       > trouble finding it,  you can set the `OPENSSL_DIR` environment variable for the
-       For full logs, run 'nix log /nix/store/ab12cd34ef56gh78ij90kl12mn34op56-myapp-0.1.0.drv'.
+       >   Could not find directory of OpenSSL installation, and this `-sys` crate cannot
+       >   proceed without this knowledge. If OpenSSL is installed and this crate had
+       >   trouble finding it,  you can set the `OPENSSL_DIR` environment variable for the
+       >   compilation process.
+       >
+       >   Make sure you also have the development packages of openssl installed.
+       >   For example, `libssl-dev` on Ubuntu or `openssl-devel` on Fedora.
+       >
+       >   If you're in a situation where you think the directory *should* be found
+       >   automatically, please open a bug at https://github.com/rust-openssl/rust-openssl
+       >   and include information about your system as well as this message.
+       >
+       >   $HOST = x86_64-unknown-linux-gnu
+       >   $TARGET = x86_64-unknown-linux-gnu
+       >   openssl-sys = 0.9.118
+       >
+       >
+       >   It looks like you're compiling on Linux and also targeting Linux. Currently this
+       >   requires the `pkg-config` utility to find OpenSSL but unfortunately `pkg-config`
+       >   could not be found. If you have OpenSSL installed you can likely fix this by
+       >   installing `pkg-config`.
+       >
+       >
+       For full logs, run:
+         nix log /nix/store/3yzy1h5girfpym9m9af09cm7c0ljfb78-sslapp-0.1.0.drv

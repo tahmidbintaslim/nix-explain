@@ -1,6 +1,37 @@
-error: builder for '/nix/store/qq11ww22ee33rr44tt55yy66uu77ii88-python3.12-mylib-0.3.0.drv' failed with exit code 1;
-       last 4 log lines:
+warning: Git tree '/home/me/proj' is dirty
+this derivation will be built:
+  /nix/store/rs3hsrf05k32varbzbbgf3mnrxln7r69-python3.14-mylib-0.3.0.drv
+building '/nix/store/rs3hsrf05k32varbzbbgf3mnrxln7r69-python3.14-mylib-0.3.0.drv'...
+error: Cannot build '/nix/store/rs3hsrf05k32varbzbbgf3mnrxln7r69-python3.14-mylib-0.3.0.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/mys7vaid8sg8ll9bfkr6qykqcjidd9sb-python3.14-mylib-0.3.0-dist
+         /nix/store/w5snm830b20d422b0ay8cfldp8kxzygi-python3.14-mylib-0.3.0
+       Last 25 log lines:
+       > Sourcing python-namespaces-hook
+       > Sourcing python-catch-conflicts-hook.sh
+       > Running phase: unpackPhase
+       > unpacking source archive /nix/store/dk58kafr2ncrcqpl2yr8rbmggm3mppcw-pyback
+       > source root is pyback
+       > setting SOURCE_DATE_EPOCH to timestamp 315619200 of file "pyback/pyproject.toml"
+       > Running phase: patchPhase
+       > Running phase: updateAutotoolsGnuConfigScriptsPhase
+       > Running phase: configurePhase
+       > no configure script, doing nothing
        > Running phase: buildPhase
        > Executing pypaBuildPhase
+       > Creating a wheel...
+       > pypa build flags: --no-isolation --outdir dist/ --wheel
        > * Getting build dependencies for wheel...
+       >
+       > Traceback (most recent call last):
+       >   File "/nix/store/p02mrznxq1m7blfgvpv68qg82byml80z-python3.14-pyproject-hooks-1.2.0/lib/python3.14/site-packages/pyproject_hooks/_impl.py", line 402, in _call_hook
+       >     raise BackendUnavailable(
+       >     ...<4 lines>...
+       >     )
+       > pyproject_hooks._impl.BackendUnavailable: Cannot import 'hatchling.build'
+       >
+       > TIP pass --env-dir and --sdist-extract-dir to keep the build environment and sources, then see https://build.pypa.io/en/stable/how-to/troubleshooting.html#debug-a-failed-build for help debugging a failed build
        > ERROR Backend 'hatchling.build' is not available.
+       For full logs, run:
+         nix log /nix/store/rs3hsrf05k32varbzbbgf3mnrxln7r69-python3.14-mylib-0.3.0.drv

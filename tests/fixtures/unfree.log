@@ -1,19 +1,40 @@
+warning: Git tree '/home/me/proj' is dirty
 error:
-       … while evaluating the attribute 'drvPath'
-         at /nix/store/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6-source/lib/customisation.nix:418:7:
-          417|     // {
-          418|       drvPath =
-             |       ^
+       … while evaluating the attribute 'vscode.drvPath'
+         at «https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz?narHash=sha256-W60urNAgQVS8bhNWH0bQsYoiagds8m38oTDUjEOM9FE%3D»/lib/customisation.nix:420:11:
+          419|         // {
+          420|           drvPath =
+             |           ^
+          421|             assert condition;
 
-       … while calling the 'derivationStrict' builtin
-         at «nix-internal»/derivation-internal.nix:37:12:
-           36|
-           37|   strict = derivationStrict drvAttrs;
-             |            ^
+       … in the condition of the assert statement
+         at «https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz?narHash=sha256-W60urNAgQVS8bhNWH0bQsYoiagds8m38oTDUjEOM9FE%3D»/lib/customisation.nix:421:13:
+          420|           drvPath =
+          421|             assert condition;
+             |             ^
+          422|             drv.drvPath;
 
-       error: Package ‘vscode-1.95.3’ in /nix/store/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6-source/pkgs/applications/editors/vscode/vscode.nix:85 has an unfree license (‘unfree’), refusing to evaluate.
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
 
+       error: Refusing to evaluate package 'vscode-1.144.0' in /nix/store/21znw7y9migznwlc8hbqyv8wjp0kz8ld-source/pkgs/applications/editors/vscode/vscode.nix:104 because it has an unfree license (‘unfree’)
        a) To temporarily allow unfree packages, you can use an environment variable
           for a single invocation of the nix tools.
 
             $ export NIXPKGS_ALLOW_UNFREE=1
+
+          Note: When using `nix shell`, `nix build`, `nix develop`, etc with a flake,
+                then pass `--impure` in order to allow use of environment variables.
+
+       b) For `nixos-rebuild` you can set
+         { nixpkgs.config.allowUnfree = true; }
+       in configuration.nix to override this.
+
+       Alternatively you can configure a predicate to allow specific packages:
+         { nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "vscode"
+           ];
+         }
+
+       c) For `nix-env`, `nix-build`, `nix-shell` or any other Nix command you can add
+         { allowUnfree = true; }
+       to ~/.config/nixpkgs/config.nix.

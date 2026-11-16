@@ -1,31 +1,32 @@
+warning: Git tree '/home/me/proj' is dirty
+warning: creating lock file "/home/me/proj/flake.lock": 
+• Added input 'nixpkgs':
+    'https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz?narHash=sha256-W60urNAgQVS8bhNWH0bQsYoiagds8m38oTDUjEOM9FE%3D' (1980-01-01)
 error:
-       … while calling the 'head' builtin
-         at /nix/store/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6-source/lib/attrsets.nix:1575:11:
-         1574|         || pred here (elemAt values 1) (head values) then
-         1575|           head values
-             |           ^
-         1576|         else
-
        … while evaluating the attribute 'value'
-         at /nix/store/q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6-source/lib/modules.nix:816:9:
-          815|     in warnDeprecation opt //
-          816|       { value = builtins.addErrorContext "while evaluating the option `${showOption loc}':" value;
+         at «https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz»/lib/modules.nix:1178:9:
+         1177|         options = [ ];
+         1178|         value = addErrorContext "while evaluating the option `${showOption loc}':" (
              |         ^
-          817|         inherit (res.defsFinal') highestPrio;
+         1179|           if options ? apply then options.apply res.mergedValue else res.mergedValue
 
        … while evaluating the option `services.web.port':
 
-       … while evaluating definitions from `/nix/store/z9x8c7v6b5n4m3l2k1j0h9g8f7d6s5a4-source/configuration.nix':
+       … while evaluating the attribute 'mergedValue'
+         at «https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz»/lib/modules.nix:1353:5:
+         1352|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+         1353|     mergedValue =
+             |     ^
+         1354|       if isDefined then
 
-       … from call site
-         at /home/me/proj/configuration.nix:3:30:
-            2|   options.services.web.port = lib.mkOption { type = lib.types.int; };
-            3|   config.services.web.port = config.services.web.prot;
-             |                              ^
+       … while evaluating definitions from `/nix/store/3zcqkl6dn9hms0kgysc232rvs2qfmfj9-source/configuration.nix':
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
 
        error: attribute 'prot' missing
        at /home/me/proj/configuration.nix:3:30:
             2|   options.services.web.port = lib.mkOption { type = lib.types.int; };
             3|   config.services.web.port = config.services.web.prot;
              |                              ^
+            4| }
        Did you mean port?

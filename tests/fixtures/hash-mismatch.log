@@ -1,0 +1,10 @@
+warning: Git tree '/home/me/proj' is dirty
+this derivation will be built:
+  /nix/store/9qxsxkh6ybgmxh7pdv7ywmlrr40f454j-nix-cache-info.drv
+this path will be fetched (149.8 KiB download, 640.5 KiB unpacked):
+  /nix/store/d56p3jpksslx6pqypzl53xidcxxrz2kc-nss-cacert-3.131.1
+copying path '/nix/store/d56p3jpksslx6pqypzl53xidcxxrz2kc-nss-cacert-3.131.1' from 'https://cache.nixos.org'...
+building '/nix/store/9qxsxkh6ybgmxh7pdv7ywmlrr40f454j-nix-cache-info.drv'...
+error: hash mismatch in fixed-output derivation '/nix/store/9qxsxkh6ybgmxh7pdv7ywmlrr40f454j-nix-cache-info.drv':
+         specified: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+            got:    sha256-LJ3jc651pScWN2NQNERaXNOmrjWsbDBtQMDgZ2R4WJc=

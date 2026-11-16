@@ -81,7 +81,8 @@ static RULES: LazyLock<Vec<Rule>> = LazyLock::new(|| {
         ),
         rule(
             "unfree",
-            r"Package [‘']([^’']+)[’'].*?has an unfree license",
+            // Old nixpkgs: "Package ‘x’ … has an unfree license"; 26.x: "Refusing to evaluate package 'x' … because it has an unfree license".
+            r"(?i)package [‘']([^’']+)[’'].*?unfree license",
             |c, _| {
                 let name = pname(g(c, 1));
                 (
@@ -94,6 +95,17 @@ static RULES: LazyLock<Vec<Rule>> = LazyLock::new(|| {
             },
         ),
         // ── Evaluator errors ──
+        rule(
+            "imports-recursion",
+            // The module system names the file whose `config`/`pkgs` argument looped.
+            r#"(?s)module argument .(\w+)' in "(?:/nix/store/[a-z0-9]{32}-source/)?([^"]+)".*?infinite recursion encountered"#,
+            |c, _| {
+                (
+                format!("`{}` uses its `{}` argument to decide `imports`, but `{}` only exists after all imports are resolved.", g(c, 2), g(c, 1), g(c, 1)),
+                format!("In {}: import unconditionally, then guard the imported module's settings:\n  config = lib.mkIf config.<option>.enable {{ ... }};", g(c, 2)),
+            )
+            },
+        ),
         rule(
             "infinite-recursion",
             r"infinite recursion encountered",
@@ -306,6 +318,8 @@ mod tests {
         let x = d("error: Package ‘vscode-1.85.1’ in /nix/store/x/pkgs/vscode.nix:63 has an unfree license (‘unfree’), refusing to evaluate.");
         assert_eq!(x.rule, "unfree");
         assert!(x.fix.contains("[ \"vscode\" ]"), "{}", x.fix);
+        let y = d("error: Refusing to evaluate package 'google-chrome-120.0' in /x.nix:1 because it has an unfree license (‘unfree’)");
+        assert!(y.fix.contains("[ \"google-chrome\" ]"), "{}", y.fix);
     }
 
     #[test]

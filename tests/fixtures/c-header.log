@@ -1,0 +1,37 @@
+warning: Git tree '/home/me/proj' is dirty
+this derivation will be built:
+  /nix/store/xia96v77zzdzdhgib318p9kw06plgc9a-python3.14-fastext-1.0.drv
+building '/nix/store/xia96v77zzdzdhgib318p9kw06plgc9a-python3.14-fastext-1.0.drv'...
+error: Cannot build '/nix/store/xia96v77zzdzdhgib318p9kw06plgc9a-python3.14-fastext-1.0.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/c4p6jjwsmk263janzzjdwnhhqa3p9w4z-python3.14-fastext-1.0
+         /nix/store/y8yjn382y2pspva384zd6pii8pv6w9w2-python3.14-fastext-1.0-dist
+       Last 25 log lines:
+       > pypa build flags: --no-isolation --outdir dist/ --wheel
+       > * Getting build dependencies for wheel...
+       > running egg_info
+       > creating src/fastext.egg-info
+       > writing src/fastext.egg-info/PKG-INFO
+       > writing dependency_links to src/fastext.egg-info/dependency_links.txt
+       > writing top-level names to src/fastext.egg-info/top_level.txt
+       > writing manifest file 'src/fastext.egg-info/SOURCES.txt'
+       > reading manifest file 'src/fastext.egg-info/SOURCES.txt'
+       > writing manifest file 'src/fastext.egg-info/SOURCES.txt'
+       > * Building wheel...
+       > running bdist_wheel
+       > running build
+       > running build_ext
+       > building 'fastext' extension
+       > creating build/temp.linux-x86_64-cpython-314/src
+       > gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O3 -Wall -fPIC -I/nix/store/bya4ansy58az5133kryqp2cvrxbnz8qy-python3-3.14.10/include/python3.14 -c src/speedups.c -o build/temp.linux-x86_64-cpython-314/src/speedups.o
+       > src/speedups.c:2:10: fatal error: zstd.h: No such file or directory
+       >     2 | #include <zstd.h>
+       >       |          ^~~~~~~~
+       > compilation terminated.
+       > error: command '/nix/store/ii6p6kc1brz3vycqg88q4zb4xd2dmqwp-gcc-wrapper-16.2.0/bin/gcc' failed with exit code 1
+       >
+       > TIP pass --env-dir and --sdist-extract-dir to keep the build environment and sources, then see https://build.pypa.io/en/stable/how-to/troubleshooting.html#debug-a-failed-build for help debugging a failed build
+       > ERROR Backend subprocess exited when trying to invoke build_wheel
+       For full logs, run:
+         nix log /nix/store/xia96v77zzdzdhgib318p9kw06plgc9a-python3.14-fastext-1.0.drv

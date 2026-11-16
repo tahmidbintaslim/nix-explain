@@ -1,0 +1,23 @@
+warning: Git tree '/home/me/proj' is dirty
+error:
+       … while evaluating the attribute 'config.services.web'
+         at «https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz?narHash=sha256-W60urNAgQVS8bhNWH0bQsYoiagds8m38oTDUjEOM9FE%3D»/lib/modules.nix:403:9:
+          402|         options = checked options;
+          403|         config = checked (removeAttrs config [ "_module" ]);
+             |         ^
+          404|         _module = checked (config._module);
+
+       … while calling the 'seq' builtin
+         at «https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz?narHash=sha256-W60urNAgQVS8bhNWH0bQsYoiagds8m38oTDUjEOM9FE%3D»/lib/modules.nix:403:18:
+          402|         options = checked options;
+          403|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          404|         _module = checked (config._module);
+
+       … while evaluating the module argument `config' in "/nix/store/vsgs1s0db0b3sryry7vpm4gch5ixf5ip-source/recursion.nix":
+
+       … if you get an infinite recursion here, you probably reference `config` in `imports`. If you are trying to achieve a conditional import behavior dependent on `config`, consider importing unconditionally, and using `mkEnableOption` and `mkIf` to control its effect.
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: infinite recursion encountered

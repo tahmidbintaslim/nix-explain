@@ -31,11 +31,11 @@ pub fn strip_ansi(s: &str) -> String {
     ANSI.replace_all(s, "").into_owned()
 }
 
-/// The actual error message: the last `error: <text>` line (modern Nix prints the
-/// trace first and the real message at the bottom).
+/// The root error: the first non-empty `error: <text>` line. Eval traces open with a bare
+/// `error:` and carry the message at the bottom; build logs put the root cause first and
+/// follow it with cascades like "Build failed due to failed dependency".
 pub fn headline(text: &str) -> Option<String> {
     text.lines()
-        .rev()
         .map(str::trim)
         .filter_map(|l| l.strip_prefix("error:"))
         .map(str::trim)
@@ -137,7 +137,7 @@ mod tests {
     }
 
     #[test]
-    fn headline_is_last_error_line() {
+    fn headline_skips_bare_error_line() {
         assert_eq!(headline(TRACE).unwrap(), "error: attribute 'prot' missing");
     }
 

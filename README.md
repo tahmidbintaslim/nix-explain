@@ -64,10 +64,11 @@ When an error is found in piped mode, `nix-explain` exits with code 1.
 | Rule | Triggers on | Suggested fix |
 |------|-------------|---------------|
 | `git-untracked` | `is not tracked by Git` / `path '/nix/store/…-source/x' does not exist` | `git add x` |
-| `unfree` | `has an unfree license` | `allowUnfreePredicate` for that package |
+| `unfree` | `has an unfree license` (old and nixpkgs 26.x wording) | `allowUnfreePredicate` for that package |
 | `hash-mismatch` | fixed-output hash mismatch | swaps the `specified` hash for the `got` hash |
 | `rust-cargo-hash` | mismatch in a `-vendor` derivation | `cargoHash = "sha256-…";` |
 | `go-vendor-hash` | mismatch in a `-go-modules` derivation | `vendorHash = "sha256-…";` |
+| `imports-recursion` | infinite recursion from using `config` in `imports` | names the module and the `mkIf` pattern |
 | `infinite-recursion` | `infinite recursion encountered` | common causes, with the line shown |
 | `attribute-missing` | `attribute 'x' missing` | the typo fix, using Nix's "Did you mean" hint |
 | `rust-openssl` | `openssl-sys` build failure | `pkg-config` + `openssl` inputs |
@@ -90,7 +91,8 @@ nix develop
 cargo test
 ```
 
-Each `tests/fixtures/*.log` file is a full Nix error log. `tests/fixtures.rs` checks the rule, fix, and
+Each `tests/fixtures/*.log` file is a real Nix error log, captured from Nix 2.34 and nixpkgs 26.11pre
+(except `git-untracked-old.log`, which reproduces the message from older Nix versions). `tests/fixtures.rs` checks the rule, fix, and
 user frame for each one. To add a rule, add an entry in `src/rules.rs`, then add a fixture and a test case.
 
 ## License

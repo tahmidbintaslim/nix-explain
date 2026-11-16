@@ -1,5 +1,20 @@
-error: builder for '/nix/store/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p-mytool-1.2.0-go-modules.drv' failed with exit code 1;
-       last 3 log lines:
+warning: Git tree '/home/me/proj' is dirty
+this derivation will be built:
+  /nix/store/rsvk97v75wp3g3xqbpv7fyql27pw5wzq-mytool-1.2.0.drv
+building '/nix/store/rsvk97v75wp3g3xqbpv7fyql27pw5wzq-mytool-1.2.0.drv'...
+error: Cannot build '/nix/store/rsvk97v75wp3g3xqbpv7fyql27pw5wzq-mytool-1.2.0.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/5hvjmwmk37gpwfygn8hjpifrk7h28ly4-mytool-1.2.0
+       Last 9 log lines:
+       > Running phase: unpackPhase
+       > unpacking source archive /nix/store/z7x5k8191c7dfyijvigbg2bpl6rydvzk-go2
+       > source root is go2
+       > Running phase: patchPhase
+       > Running phase: updateAutotoolsGnuConfigScriptsPhase
+       > Running phase: configurePhase
        > Running phase: buildPhase
-       > go: go.mod requires go >= 1.24.1 (running go 1.23.6; GOTOOLCHAIN=local)
-       For full logs, run 'nix log /nix/store/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p-mytool-1.2.0-go-modules.drv'.
+       > Building subPackage .
+       > go: go.mod requires go >= 1.99.0 (running go 1.27.3; GOTOOLCHAIN=local)
+       For full logs, run:
+         nix log /nix/store/rsvk97v75wp3g3xqbpv7fyql27pw5wzq-mytool-1.2.0.drv
